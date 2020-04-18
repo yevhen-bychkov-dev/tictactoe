@@ -34,17 +34,22 @@ const playInGame = () => {
     resultX.push(+targ.id);
     checkWinner(resultX);
     counter++;
+    setTimeout(create0, 500);
   }
 
-  function create0(targ) {
-    targ.innerHTML = `
+  function create0() {
+    const items = document.querySelectorAll('.playing-field');
+    const step = Math.floor(Math.random() * items.length);
+
+    items[step].innerHTML = `
     <div class="o-symbol">
       <span class="o-symbol__item"></span>
     </div>
     `;
     player = !player;
-    resultO.push(+targ.id);
+    resultO.push(+items[step].id);
     checkWinner(resultO);
+    items[step].classList.remove('playing-field');
     counter++;
   }
 
@@ -61,7 +66,7 @@ const playInGame = () => {
       }
 
       if (count > 2) {
-        !player ? viewMessage('X win!') : viewMessage('O win!');
+        !player ? viewMessage('Player win!') : viewMessage('AI win!');
         counter = 0;
 
         for (const item of items) {
@@ -117,8 +122,8 @@ const playInGame = () => {
     containerGame.addEventListener('click', e => {
       const target = e.target;
 
-      if (target.classList.contains('playing-field')) {
-        player ? createX(target) : create0(target);
+      if (target.classList.contains('playing-field') && player) {
+        createX(target);
         target.classList.remove('playing-field');
 
         if (counter > 8) {
