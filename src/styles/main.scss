@@ -4,4 +4,145 @@
 
 body {
   background: $c-gray;
+  padding: 0;
+  margin: 0;
+  background-color: #15bdac;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  width: 800px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 10px;
+  left: calc(50% - 400px);
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(-200%);
+  z-index: 10;
+  text-align: center;
+
+  &__item {
+    margin: 0;
+    line-height: 300px;
+    font-size: 60px;
+  }
+}
+
+.btn {
+  display: block;
+  color: #15bdac;
+  background-color: ligthgrey;
+  border: none;
+  border-radius: 5px;
+  width: 400px;
+  height: 50px;
+  margin: 100px auto 0;
+  font-weight: bold;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 680px;
+  margin: 100px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__item {
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    width: 200px;
+    height: 200px;
+
+    &--1 {
+      margin-top: 5px;
+      margin-left: 5px;
+      border-left: none;
+      border-top: none;
+    }
+
+    &--2 {
+      margin-top: 5px;
+      border-top: none;
+    }
+
+    &--3 {
+      margin-top: 5px;
+      border-right: none;
+      border-top: none;
+    }
+
+    &--4 {
+      margin-left: 5px;
+      border-left: none;
+    }
+
+    &--6 {
+      border-right: none;
+    }
+
+    &--7 {
+      margin-left: 5px;
+      margin-bottom: 5px;
+      border-bottom: none;
+      border-left: none;
+    }
+
+    &--8 {
+      margin-bottom: 5px;
+      border-bottom: none;
+    }
+
+    &--9 {
+      margin-bottom: 5px;
+      border-bottom: none;
+      border-right: none;
+    }
+  }
+}
+
+.x-symbol {
+  position: relative;
+  right: 40%;
+  width: 100%;
+  height: 100%;
+
+  &__item {
+    position: absolute;
+    height: 10px;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 50%;
+    left: 50%;
+
+    &--1 {
+      transform: rotate(45deg);
+    }
+
+    &--2 {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.o-symbol {
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+  &__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid rgba(0, 0, 0, 0.8);
+    transform: translate(-50%, -50%);
+  }
 }
